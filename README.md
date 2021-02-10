@@ -12,4 +12,5 @@
 #### In the case the player position go above 100, the player stays in the same previous position till the player gets the exact number that add to 100.
 ### Used Case:6
 #### Report the number of times the dice played to win the game and also the position after every dice Roll
-
+### Used Case:7
+#### Play the game with 2 Players. In the case a player gets ladder again then plays again. Finally report which player won the game.
