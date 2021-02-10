@@ -10,4 +10,6 @@
 #### Repeat till Player reaches the winning position 100.
 ### Used Case:5
 #### In the case the player position go above 100, the player stays in the same previous position till the player gets the exact number that add to 100.
+### Used Case:6
+#### Report the number of times the dice played to win the game and also the position after every dice Roll
 

@@ -6,6 +6,7 @@ public class SnakeLadder {
 	public static void main(String[] args) {
 		int player1Position = 0;
 		int currentPosition = 0;
+		int count = 0;
 		//Creating a Scanner Obj for multiple uses
 		Scanner sc = new Scanner(System.in);
 		System.out.println("***** Welcome *****");
@@ -42,8 +43,10 @@ public class SnakeLadder {
 					if ( player1Position < 0 )
 						player1Position = 0;
 			currentPosition = player1Position;
+			count++;
 			}
 			System.out.println("Player-1 Position "+player1Position);
+			System.out.println("Number of times the Dice was Rolled: "+count);
 		}
 	}
 }
