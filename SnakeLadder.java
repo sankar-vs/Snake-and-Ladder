@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class SnakeLadder {
 	public static void main(String[] args) {
 		int player1Position = 0;
-		int diceRoll = (int)(Math.floor(Math.random()*10) % 6)+1;
+
 		//Creating a Scanner Obj for multiple uses
 		Scanner sc = new Scanner(System.in);
 		System.out.println("***** Welcome *****");
@@ -16,8 +16,24 @@ public class SnakeLadder {
 			System.out.println("Sad to see you not play!! See Ya!");
 			System.exit(0);
 		}
-		System.out.println("Dice Rolled: "+diceRoll);
-                player1Position += diceRoll;
+		//Roll the die to get number between 1 to 6
+                int dieRoll = (int)(Math.floor(Math.random()*10) % 6)+1;
+
+               	//As we are not modelling a board of 100 squares, we hypothetically use a variable to create options as 0-No PLay, 1-Ladder, 2-Snake
+               	//Lets assume that Once in Ladder the player moves forward and in snake the player moves backward.
+               	int position = (int)Math.floor(Math.random()*10) %3;
+
+		System.out.println("Die Rolled: "+dieRoll);
+		switch(position) {
+			case 0:
+				System.out.println("No Play");
+				break;
+			case 1:
+				player1Position += dieRoll;
+				break;
+			default:
+				player1Position -= dieRoll;
+		}
                 System.out.println("Player1 Postion "+player1Position);
 
 	}
