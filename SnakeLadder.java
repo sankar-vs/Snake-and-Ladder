@@ -39,6 +39,17 @@ public class SnakeLadder {
 					player1Position += dieRoll1;
 					if ( player1Position > 100 )
 						player1Position = currentPosition1;
+					int diceRoll = LADDER;
+					do {
+						diceRoll = (int)(Math.floor(Math.random()*10) % 6)+1;
+						if ( diceRoll == LADDER ) {
+							player1Position += dieRoll1;
+							if ( player1Position > 100 )
+                                                		player1Position = currentPosition1;
+						currentPosition1 = player1Position;
+						count1++;
+						}
+					} while ( diceRoll == LADDER);
 					break;
 				default:
 					player1Position -= dieRoll1;
@@ -67,7 +78,18 @@ public class SnakeLadder {
                                         player2Position += dieRoll2;
                                         if ( player2Position > 100 )
                                                 player2Position = currentPosition2;
-                                        break;
+                                        int diceRoll = LADDER;
+                                        do {
+                                                diceRoll = (int)(Math.floor(Math.random()*10) % 6)+1;
+                                                if ( diceRoll == LADDER ) {
+                                                        player2Position += dieRoll2;
+                                                        if ( player2Position > 100 )
+                                                                player2Position = currentPosition2;
+                                                currentPosition2 = player1Position;
+                                                count2++;
+                                                }
+                                        } while ( diceRoll == LADDER);
+					break;
                                 default:
                                         player2Position -= dieRoll2;
                                         if ( player2Position < 0 )
