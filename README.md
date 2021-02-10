@@ -6,3 +6,5 @@
 #### Player Rolls the die to get a number between 1 to 6 using RANDOM Function.
 ### Used Case:3
 #### The player checks for an option, they are No play, Ladder and Snake
+### Used Case:4
+#### Repeat till Player reaches the winning position 100.
