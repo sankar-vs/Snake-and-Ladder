@@ -3,6 +3,7 @@ public class SnakeLadder {
 	public static final int NO_PLAY = 0;
 	public static final int LADDER = 1;
 	public static final int SNAKE = 2;
+
 	public static void main(String[] args) {
 		int player1Position = 0, player2Position = 0;
 		int currentPosition1 = 0, currentPosition2 = 0;
@@ -31,6 +32,7 @@ public class SnakeLadder {
                 	int position1 = (int)Math.floor(Math.random()*10) %3;
 
 			System.out.println("Die Rolled Player1: "+dieRoll1);
+			count1++;
 			switch(position1) {
 				case NO_PLAY:
 					System.out.println("No Play");
@@ -42,13 +44,15 @@ public class SnakeLadder {
 					int diceRoll = LADDER;
 					do {
 						diceRoll = (int)(Math.floor(Math.random()*10) % 6)+1;
+						count1++;
 						if ( diceRoll == LADDER ) {
 							player1Position += dieRoll1;
 							if ( player1Position > 100 )
                                                 		player1Position = currentPosition1;
 						currentPosition1 = player1Position;
-						count1++;
 						}
+					System.out.println("Player-1 Position "+player1Position);
+		                        System.out.println("Number of times the Player-1 Dice was Rolled: "+count1);
 					} while ( diceRoll == LADDER);
 					break;
 				default:
@@ -56,7 +60,6 @@ public class SnakeLadder {
 					if ( player1Position < 0 )
 						player1Position = 0;
 			currentPosition1 = player1Position;
-			count1++;
 			}
 			System.out.println("Player-1 Position "+player1Position);
 			System.out.println("Number of times the Player-1 Dice was Rolled: "+count1);
@@ -70,6 +73,7 @@ public class SnakeLadder {
                         int position2 = (int)Math.floor(Math.random()*10) %3;
 
                         System.out.println("Die Rolled Player2: "+dieRoll2);
+			count2++;
                         switch(position2) {
                                 case NO_PLAY:
                                         System.out.println("No Play");
@@ -81,13 +85,15 @@ public class SnakeLadder {
                                         int diceRoll = LADDER;
                                         do {
                                                 diceRoll = (int)(Math.floor(Math.random()*10) % 6)+1;
+						count2++;
                                                 if ( diceRoll == LADDER ) {
                                                         player2Position += dieRoll2;
                                                         if ( player2Position > 100 )
                                                                 player2Position = currentPosition2;
                                                 currentPosition2 = player1Position;
-                                                count2++;
                                                 }
+		                        System.out.println("Player-2 Position "+player2Position);
+		                        System.out.println("Number of times the Player-2 Dice was Rolled: "+count2);
                                         } while ( diceRoll == LADDER);
 					break;
                                 default:
@@ -95,7 +101,6 @@ public class SnakeLadder {
                                         if ( player2Position < 0 )
                                                 player2Position = 0;
                         currentPosition2 = player2Position;
-                        count2++;
                         }
                         System.out.println("Player-2 Position "+player2Position);
                         System.out.println("Number of times the Player-2 Dice was Rolled: "+count2);
