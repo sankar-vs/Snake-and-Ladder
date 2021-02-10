@@ -1,8 +1,11 @@
 import java.util.Scanner;
 public class SnakeLadder {
+	public static final int NO_PLAY = 0;
+	public static final int LADDER = 1;
+	public static final int SNAKE = 2;
 	public static void main(String[] args) {
 		int player1Position = 0;
-
+		int currentPosition = 0;
 		//Creating a Scanner Obj for multiple uses
 		Scanner sc = new Scanner(System.in);
 		System.out.println("***** Welcome *****");
@@ -26,16 +29,19 @@ public class SnakeLadder {
 
 			System.out.println("Die Rolled: "+dieRoll);
 			switch(position) {
-				case 0:
+				case NO_PLAY:
 					System.out.println("No Play");
 					break;
-				case 1:
+				case LADDER:
 					player1Position += dieRoll;
+					if ( player1Position > 100 )
+						player1Position = currentPosition;
 					break;
 				default:
 					player1Position -= dieRoll;
 					if ( player1Position < 0 )
 						player1Position = 0;
+			currentPosition = player1Position;
 			}
 			System.out.println("Player-1 Position "+player1Position);
 		}

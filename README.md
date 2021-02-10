@@ -8,3 +8,6 @@
 #### The player checks for an option, they are No play, Ladder and Snake
 ### Used Case:4
 #### Repeat till Player reaches the winning position 100.
+### Used Case:5
+#### In the case the player position go above 100, the player stays in the same previous position till the player gets the exact number that add to 100.
+
