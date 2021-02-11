@@ -20,26 +20,28 @@ public class SnakeLadder {
 			System.out.println("Sad to see you not play!! See Ya!");
 			System.exit(0);
 		}
-		while ( player1Position != 100 ) {
+		while ( player1Position < 100 ) {
 			//Roll the die to get number between 1 to 6
                 	int dieRoll = (int)(Math.floor(Math.random()*10) % 6)+1;
 
-                	//As we are not modelling a board of 100 squares, we hypothetically use a variable to create options as 0-No PLay, 1-Ladder, 2-Snake
-                	//Lets assume that Once in Ladder the player moves forward and in snake the player moves backward.
+                	/* As we are not modelling a board of 100 squares, we hypothetically use a variable to create options as 0-No PLay, 1-Ladder, 2-Snake
+                	Lets assume that Once in Ladder the player moves forward and in snake the player moves backward. */
                 	int position = (int)Math.floor(Math.random()*10) %3;
 
-			System.out.println("Die Rolled: "+dieRoll);
+			System.out.println("Die Rolled: "+ dieRoll);
 			switch(position) {
 				case NO_PLAY:
 					System.out.println("No Play");
 					break;
 				case LADDER:
-					player1Position += dieRoll;
+					System.out.println("LADDER");
+					player1Position = player1Position + dieRoll;
 					if ( player1Position > 100 )
 						player1Position = currentPosition;
 					break;
 				default:
-					player1Position -= dieRoll;
+					System.out.println("SNAKE");
+					player1Position = player1Position - dieRoll;
 					if ( player1Position < 0 )
 						player1Position = 0;
 			currentPosition = player1Position;
