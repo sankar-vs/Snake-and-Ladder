@@ -26,13 +26,15 @@ public class SnakeLadder {
 		System.out.println("Die Rolled: "+dieRoll);
 		switch(position) {
 			case 0:
-				System.out.println("No Play");
+				System.out.println("NO PLAY");
 				break;
 			case 1:
-				player1Position += dieRoll;
+				System.out.println("LADDER");
+				player1Position = player1Position + dieRoll;
 				break;
 			default:
-				player1Position -= dieRoll;
+				System.out.println("SNAKE");
+				player1Position = player1Position - dieRoll;
 		}
                 System.out.println("Player1 Postion "+player1Position);
 
